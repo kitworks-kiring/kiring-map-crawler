@@ -1,0 +1,8 @@
+# Security
+.env
+config.py
+*.key
+
+# Python
+__pycache__/
+*.pyc
