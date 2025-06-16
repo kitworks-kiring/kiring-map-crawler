@@ -30,5 +30,4 @@ class KakaoMapGeocoding:
     except Exception as e:
       print(f"Geocoding 오류: {e}")
 
-    # 실패 시 None, None 반환 (중요!)
     return None, None
