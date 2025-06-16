@@ -27,7 +27,7 @@ restaurant_data = []
 
 # 네이버 지도 URL (keyword: 당산역 음식점)
 KEYWORD = "%EB%8B%B9%EC%82%B0%EC%97%AD%20%EC%9D%8C%EC%8B%9D%EC%A0%90?"
-URL = f"http://map.naver.com/p/search/{KEYWORD}?c=15.00,0,0,0,dh"
+URL = f"http://map.naver.com/p/search/{KEYWORD}?c=14.00,0,0,0,dh"
 
 # 네이버 지도 페이지 열기
 driver.get(url=URL)
@@ -68,7 +68,7 @@ while True:
 	if current_page == '1':
 		elements = driver.find_elements(By.XPATH, '//*[@id="_pcmap_list_scroll_container"]//li')[2:]
 	else:
-			elements = driver.find_elements(By.XPATH, '//*[@id="_pcmap_list_scroll_container"]//li')
+		elements = driver.find_elements(By.XPATH, '//*[@id="_pcmap_list_scroll_container"]//li')
 
 	print(f"{Fore.CYAN}현재 {current_page} 페이지 / 총 {len(elements)}개의 음식점을 찾았습니다.{Style.RESET_ALL}\n")
 
