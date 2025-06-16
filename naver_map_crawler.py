@@ -51,11 +51,6 @@ while True:
 	# 현재 페이지 번호 가져오기 (먼저 가져와서 체크)
 	current_page = driver.find_element(By.XPATH, '//a[contains(@class, "mBN2s qxokY")]').text
 
-	# 테스트용: 2페이지 완료 후 종료
-	if int(current_page) > 2:
-		print(f"테스트 완료: {current_page}페이지에서 크롤링 중단")
-		break
-
 	# 다음페이지 버튼 활성화여부 체크
 	is_next_btn_disabled = driver.find_element(By.XPATH, '//div[@id="app-root"]/div/div[2]/div[2]/a[7]').get_attribute('aria-disabled')
 	if is_next_btn_disabled == 'true':
