@@ -1,12 +1,9 @@
 # 🗺️ 네이버지도 음식점 크롤러
 
-![네이버맵_크롤링](https://github.com/user-attachments/assets/84d77161-03ef-4fda-8bc5-f1d8308dcab9)
+![네이버맵 크롤링 화면 캡쳐](https://github.com/user-attachments/assets/84d77161-03ef-4fda-8bc5-f1d8308dcab9)
 
-## 🏗️ 프로젝트 개요
-
-**[KIRING 프로젝트](https://github.com/kitworks-kiring/kiring-frontend)** 의 일환으로,<br />
-**네이버지도에서 음식점 정보를 자동으로 수집**하고, **데이터를 정제 및 표준화**하여 **엑셀 파일로 저장**하는<br />
-**Python 기반 크롤러**입니다.
+**[KIRING 프로젝트](https://github.com/kitworks-kiring/kiring-frontend)** 의 일환으로, **네이버지도에서 음식점 정보를 자동으로 수집**하고,<br />
+**데이터를 정제 및 표준화**하여 **엑셀 파일로 저장**하는 **Python 기반 크롤러**입니다.
 
 <br /><br />
 
@@ -98,31 +95,31 @@
 
 ## 🚀 실행 방법
 
-1. 필요 패키지 설치
+1. **필요 패키지 설치**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-2. 카카오 REST API 키 발급 후 .env 파일에 등록
+2. **카카오 REST API 키 발급 후 .env 파일에 등록**
 
    ```bash
    KAKAO_REST_API_KEY=발급받은_키
    ```
 
-3. 스크립트 실행
+3. **스크립트 실행**
 
    ```bash
    python naver_map_crawler.py
    ```
 
-4. 엑셀 파일 확인
+4. **엑셀 파일 확인**
 
-   ![엑셀 출력 결과](https://pub-cf3b9667253a490495a16433a99bd7ca.r2.dev/readme/crawler/%EC%97%91%EC%85%80_%EC%B6%9C%EB%A0%A5_%EA%B2%B0%EA%B3%BC.png)
+   <img src="https://github.com/user-attachments/assets/ab237722-84b4-4f99-b3cf-6aefd31dc7af" height="500" alt="엑셀 출력 결과" />
 
    - 실행 폴더 (또는 별도 지정 경로)에 결과 파일이 생성됩니다.
 
-<br /><br />
+<br />
 
 ---
 
