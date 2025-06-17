@@ -12,6 +12,7 @@ from colorama import Fore, Style
 
 from geocoding import KakaoMapGeocoding
 from scroll_utils import ScrollManager
+from focus_utils import focus_list, focus_detail
 
 # 드라이버 설정
 geocoder = KakaoMapGeocoding()
@@ -33,20 +34,8 @@ URL = f"http://map.naver.com/p/search/{KEYWORD}?c=14.00,0,0,0,dh"
 driver.get(url=URL)
 time.sleep(5)
 
-def focus_list():
-	"""음식점 리스트 포커싱"""
-	driver.switch_to.parent_frame()
-	iframe = driver.find_element(By.XPATH,'//*[@id="searchIframe"]')
-	driver.switch_to.frame(iframe)
-
-def focus_detail():
-	"""음식점 상세 정보 포커싱"""
-	driver.switch_to.parent_frame()
-	iframe = driver.find_element(By.XPATH,'//*[@id="entryIframe"]')
-	driver.switch_to.frame(iframe)
-
 while True:
-	focus_list()
+	focus_list(driver)
 
 	# 현재 페이지 번호 가져오기 (먼저 가져와서 체크)
 	current_page = driver.find_element(By.XPATH, '//a[contains(@class, "mBN2s qxokY")]').text
@@ -84,11 +73,11 @@ while True:
 			img_url = ''
 
 			# 리스트에서 음식점 이름 클릭
-			focus_list()
+			focus_list(driver)
 			element.find_element(By.CLASS_NAME, 'CHC5F').find_element(By.XPATH, ".//div/a/span").click()
 			time.sleep(2)
 
-			focus_detail()
+			focus_detail(driver)
 			time.sleep(3)
 
 			# 음식점 대표 이미지
@@ -125,7 +114,7 @@ while True:
 			scroll_manager.scroll_page_gradually()
 			scroll_manager.scroll_to_position("top")
 
-			focus_detail()
+			focus_detail(driver)
 
 			# 방문자 리뷰 element (리뷰가 있으면 메뉴 크롤링, 없으면 빈 리스트)
 			try:
@@ -175,7 +164,7 @@ while True:
 			continue
 
 	# 다음 페이지로 이동
-	focus_list()
+	focus_list(driver)
 	if is_next_btn_disabled == 'false':
 		driver.find_element(By.XPATH, '//div[@id="app-root"]/div/div[2]/div[2]/a[7]').click()
 		time.sleep(3)

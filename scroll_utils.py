@@ -1,4 +1,3 @@
-# scroll_utils.py
 import time
 from selenium.webdriver.common.by import By
 
